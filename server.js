@@ -18,6 +18,9 @@ const app = express();
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 
+const server = app.listen(HTTP_PORT, () => {
+});
+
 app.get("/app/", (req,res,next) => {
     res.json({"message": "200 OK"});
     res.status(200);
@@ -62,7 +65,6 @@ app.get("/app/rpsls/play/:shot", (req,res,next) => {
     res.json(rpsls(req.params.shot));
     res.status(200);
 });
-
 
 app.use(function(req,res){
     res.json({"message": "404 NOT FOUND"});
