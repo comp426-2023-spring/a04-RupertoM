@@ -66,3 +66,9 @@ app.get("/app/rpsls/play/:shot", (req,res,next) => {
     res.json(rpsls(req.params.shot));
     res.status(200);
 });
+
+
+app.use(function(req,res){
+    res.json({"message": "404 NOT FOUND"});
+    res.status(404);
+});
