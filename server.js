@@ -6,13 +6,7 @@ import {rps, rpsls} from './lib/rpsls.js';
 
 var argv = minimist(process.argv.slice(2));
 var HTTP_PORT = 0;
-
-if(argv['port'] != undefined){
-    HTTP_PORT = argv['port']
-} else {
-    HTTP_PORT = 5000;
-}
-
+const port = args.port || 5000;
 const app = express();
 
 app.use(express.urlencoded({extended: true}));
