@@ -51,3 +51,18 @@ app.post("/app/rps/play", (req,res,next) => {
     res.json(rps(req.body.shot));
     res.status(200);
 });
+
+app.post("/app/rpsls/play", (req,res,next) => {
+    res.json(rpsls(req.body.shot));
+    res.status(200);
+});
+
+app.get("/app/rps/play/:shot", (req,res,next) => {
+    res.json(rps(req.params['shot']));
+    res.status(200);
+});
+
+app.get("/app/rpsls/play/:shot", (req,res,next) => {
+    res.json(rpsls(req.params.shot));
+    res.status(200);
+});
