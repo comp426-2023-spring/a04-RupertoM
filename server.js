@@ -12,3 +12,12 @@ if(argv['port'] != undefined){
 } else {
     HTTP_PORT = 5000;
 }
+
+const app = express();
+
+app.use(express.urlencoded({extended: true}));
+app.use(express.json());
+
+const server = app.listen(HTTP_PORT, () => {
+    console.log(`Server is running on port ${HTTP_PORT}`)
+});
