@@ -31,3 +31,13 @@ app.get("/app/rps", (req,res,next) => {
     res.json(rps());
     res.status(200);
 });
+
+app.get("/app/rpsls", (req,res,next) => {
+    res.json(rpsls());
+    res.status(200);
+});
+
+app.get("/app/rps/play", (req,res,next) => {
+    res.json(rps(req.query.shot));
+    res.status(200);
+});
