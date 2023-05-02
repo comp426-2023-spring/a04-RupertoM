@@ -41,3 +41,13 @@ app.get("/app/rps/play", (req,res,next) => {
     res.json(rps(req.query.shot));
     res.status(200);
 });
+
+app.get("/app/rpsls/play", (req,res,next) => {
+    res.json(rpsls(req.query.shot));
+    res.status(200);
+});
+
+app.post("/app/rps/play", (req,res,next) => {
+    res.json(rps(req.body.shot));
+    res.status(200);
+});
