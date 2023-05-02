@@ -17,9 +17,7 @@ const app = express();
 
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
-
-const server = app.listen(HTTP_PORT, () => {
-});
+app.listen(port);
 
 app.get("/app/", (req,res,next) => {
     res.json({"message": "200 OK"});
