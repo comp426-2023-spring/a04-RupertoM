@@ -18,10 +18,6 @@ const app = express();
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 
-const server = app.listen(HTTP_PORT, () => {
-    console.log(`Server is running on port ${HTTP_PORT}`)
-});
-
 app.get("/app/", (req,res,next) => {
     res.json({"message": "200 OK"});
     res.status(200);
